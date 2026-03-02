@@ -25,10 +25,6 @@ class MerchantOrderReader implements MerchantOrderReaderInterface
      */
     protected $merchantOmsFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantSalesReturnMerchantUserGui\Dependency\Facade\MerchantSalesReturnMerchantUserGuiToMerchantSalesOrderFacadeInterface $merchantSalesOrderFacade
-     * @param \Spryker\Zed\MerchantSalesReturnMerchantUserGui\Dependency\Facade\MerchantSalesReturnMerchantUserGuiToMerchantOmsFacadeInterface $merchantOmsFacade
-     */
     public function __construct(
         MerchantSalesReturnMerchantUserGuiToMerchantSalesOrderFacadeInterface $merchantSalesOrderFacade,
         MerchantSalesReturnMerchantUserGuiToMerchantOmsFacadeInterface $merchantOmsFacade
@@ -54,11 +50,6 @@ class MerchantOrderReader implements MerchantOrderReaderInterface
         return $indexedMerchantOrderItemTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderItemCollectionTransfer $merchantOrderItemTransfers
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderItemCollectionTransfer
-     */
     protected function expandMerchantOrderItemsStateHistory(
         MerchantOrderItemCollectionTransfer $merchantOrderItemTransfers
     ): MerchantOrderItemCollectionTransfer {

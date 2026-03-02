@@ -26,11 +26,6 @@ class MerchantSalesReturnMerchantUserGuiToMerchantOmsFacadeBridge implements Mer
         $this->merchantOmsFacade = $merchantOmsFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderItemCollectionTransfer $merchantOrderItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderItemCollectionTransfer
-     */
     public function expandMerchantOrderItemsWithManualEvents(
         MerchantOrderItemCollectionTransfer $merchantOrderItemCollectionTransfer
     ): MerchantOrderItemCollectionTransfer {
@@ -47,21 +42,11 @@ class MerchantSalesReturnMerchantUserGuiToMerchantOmsFacadeBridge implements Mer
         return $this->merchantOmsFacade->getMerchantOrderItemsStateHistory($merchantOrderItemIds);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOmsTriggerRequestTransfer $merchantOmsTriggerRequestTransfer
-     *
-     * @return int
-     */
     public function triggerEventForMerchantOrderItems(MerchantOmsTriggerRequestTransfer $merchantOmsTriggerRequestTransfer): int
     {
         return $this->merchantOmsFacade->triggerEventForMerchantOrderItems($merchantOmsTriggerRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOmsTriggerRequestTransfer $merchantOmsTriggerRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantOmsTriggerResponseTransfer
-     */
     public function triggerEventForMerchantOrderItem(
         MerchantOmsTriggerRequestTransfer $merchantOmsTriggerRequestTransfer
     ): MerchantOmsTriggerResponseTransfer {

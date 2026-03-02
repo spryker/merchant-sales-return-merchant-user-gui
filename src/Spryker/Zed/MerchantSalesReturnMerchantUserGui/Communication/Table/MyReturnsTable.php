@@ -105,12 +105,6 @@ class MyReturnsTable extends AbstractTable
      */
     protected $merchantUserFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantSalesReturnMerchantUserGui\Dependency\Service\MerchantSalesReturnMerchantUserGuiToUtilDateTimeServiceInterface $utilDateTimeService
-     * @param \Spryker\Zed\MerchantSalesReturnMerchantUserGui\MerchantSalesReturnMerchantUserGuiConfig $merchantSalesReturnMerchantUserGuiConfig
-     * @param \Orm\Zed\SalesReturn\Persistence\SpySalesReturnQuery $salesReturnQuery
-     * @param \Spryker\Zed\MerchantSalesReturnMerchantUserGui\Dependency\Facade\MerchantSalesReturnMerchantUserGuiToMerchantUserFacadeInterface $merchantUserFacade
-     */
     public function __construct(
         MerchantSalesReturnMerchantUserGuiToUtilDateTimeServiceInterface $utilDateTimeService,
         MerchantSalesReturnMerchantUserGuiConfig $merchantSalesReturnMerchantUserGuiConfig,
@@ -123,11 +117,6 @@ class MyReturnsTable extends AbstractTable
         $this->merchantUserFacade = $merchantUserFacade;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $config->setHeader([
@@ -194,9 +183,6 @@ class MyReturnsTable extends AbstractTable
         return $this->expandReturnsWithItemStates($returns);
     }
 
-    /**
-     * @return \Orm\Zed\SalesReturn\Persistence\SpySalesReturnQuery|null
-     */
     protected function prepareQuery(): ?SpySalesReturnQuery
     {
         try {
@@ -310,11 +296,6 @@ class MyReturnsTable extends AbstractTable
         return $stateLabels;
     }
 
-    /**
-     * @param \Orm\Zed\SalesReturn\Persistence\SpySalesReturn $salesReturnEntity
-     *
-     * @return string
-     */
     protected function buildLinks(SpySalesReturn $salesReturnEntity): string
     {
         $buttons = [];

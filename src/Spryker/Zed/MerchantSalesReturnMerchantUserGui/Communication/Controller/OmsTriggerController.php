@@ -69,11 +69,6 @@ class OmsTriggerController extends AbstractController
      */
     protected const MESSAGE_REDIRECT_NOT_FOUND_ERROR = 'Parameter redirect not found.';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function submitTriggerEventAction(Request $request): RedirectResponse
     {
         $redirect = (string)$request->query->get('redirect', static::URL_PARAM_REDIRECT);
@@ -129,11 +124,6 @@ class OmsTriggerController extends AbstractController
         return $this->redirectResponse($redirect);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function submitTriggerEventItemAction(Request $request): RedirectResponse
     {
         $redirect = (string)$request->query->get('redirect', static::URL_PARAM_REDIRECT);
@@ -180,11 +170,6 @@ class OmsTriggerController extends AbstractController
         return $this->redirectResponse($redirect);
     }
 
-    /**
-     * @param string $returnReference
-     *
-     * @return \Generated\Shared\Transfer\ReturnTransfer|null
-     */
     protected function findReturn(string $returnReference): ?ReturnTransfer
     {
         return $this->getFactory()

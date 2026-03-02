@@ -150,12 +150,6 @@ class CreateController extends AbstractController
         ];
     }
 
-    /**
-     * @param int $idMerchantOrder
-     * @param int $idMerchant
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderTransfer|null
-     */
     protected function findMerchantOrder(int $idMerchantOrder, int $idMerchant): ?MerchantOrderTransfer
     {
         $merchantOrderCriteriaTransfer = (new MerchantOrderCriteriaTransfer())

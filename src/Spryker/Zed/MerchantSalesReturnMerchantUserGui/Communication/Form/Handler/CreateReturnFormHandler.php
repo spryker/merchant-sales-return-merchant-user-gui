@@ -44,21 +44,12 @@ class CreateReturnFormHandler implements CreateReturnFormHandlerInterface
      */
     protected $salesReturnFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantSalesReturnMerchantUserGui\Dependency\Facade\MerchantSalesReturnMerchantUserGuiToSalesReturnFacadeInterface $salesReturnFacade
-     */
     public function __construct(
         MerchantSalesReturnMerchantUserGuiToSalesReturnFacadeInterface $salesReturnFacade
     ) {
         $this->salesReturnFacade = $salesReturnFacade;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $returnCreateForm
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\ReturnResponseTransfer
-     */
     public function handleForm(FormInterface $returnCreateForm, OrderTransfer $orderTransfer): ReturnResponseTransfer
     {
         $returnCreateFormData = $returnCreateForm->getData();

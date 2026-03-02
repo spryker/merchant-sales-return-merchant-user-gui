@@ -94,11 +94,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
      */
     public const PLUGIN_ITEM_FORM_TYPE = 'PLUGIN_ITEM_FORM_TYPE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -116,11 +111,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantSalesOrderFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_SALES_ORDER, function (Container $container) {
@@ -130,11 +120,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantUserFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_USER, function (Container $container) {
@@ -144,11 +129,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesReturnPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_SALES_RETURN, $container->factory(function () {
@@ -158,11 +138,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesReturnFacade(Container $container): Container
     {
         $container->set(static::FACADE_SALES_RETURN, function (Container $container) {
@@ -172,11 +147,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCustomerFacade(Container $container): Container
     {
         $container->set(static::FACADE_CUSTOMER, function (Container $container) {
@@ -186,11 +156,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesFacade(Container $container): Container
     {
         $container->set(static::FACADE_SALES, function (Container $container) {
@@ -200,11 +165,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDateTimeService(Container $container): Container
     {
         $container->set(static::SERVICE_DATE_TIME, function (Container $container) {
@@ -214,11 +174,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantOmsFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_OMS, function (Container $container) {
@@ -230,11 +185,6 @@ class MerchantSalesReturnMerchantUserGuiDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addGlossaryFacade(Container $container): Container
     {
         $container->set(static::FACADE_GLOSSARY, function (Container $container) {

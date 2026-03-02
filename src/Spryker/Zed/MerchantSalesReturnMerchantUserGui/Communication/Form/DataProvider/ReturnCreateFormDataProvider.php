@@ -50,10 +50,6 @@ class ReturnCreateFormDataProvider
      */
     protected $glossaryFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantSalesReturnMerchantUserGui\Dependency\Facade\MerchantSalesReturnMerchantUserGuiToSalesReturnFacadeInterface $salesReturnFacade
-     * @param \Spryker\Zed\MerchantSalesReturnMerchantUserGui\Dependency\Facade\MerchantSalesReturnMerchantUserGuiToGlossaryFacadeInterface $glossaryFacade
-     */
     public function __construct(
         MerchantSalesReturnMerchantUserGuiToSalesReturnFacadeInterface $salesReturnFacade,
         MerchantSalesReturnMerchantUserGuiToGlossaryFacadeInterface $glossaryFacade
@@ -122,11 +118,6 @@ class ReturnCreateFormDataProvider
         return $returnReasonChoices;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     protected function translateReturnPolicyMessages(OrderTransfer $orderTransfer): OrderTransfer
     {
         foreach ($orderTransfer->getItems() as $itemTransfer) {
@@ -136,11 +127,6 @@ class ReturnCreateFormDataProvider
         return $orderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function translateReturnPolicyMessage(ItemTransfer $itemTransfer): ItemTransfer
     {
         if (!$itemTransfer->getReturnPolicyMessages()->count()) {

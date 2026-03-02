@@ -29,31 +29,16 @@ class MerchantSalesReturnMerchantUserGuiToSalesReturnFacadeBridge implements Mer
         $this->salesReturnFacade = $salesReturnFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ReturnFilterTransfer $returnFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\ReturnCollectionTransfer
-     */
     public function getReturns(ReturnFilterTransfer $returnFilterTransfer): ReturnCollectionTransfer
     {
         return $this->salesReturnFacade->getReturns($returnFilterTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ReturnReasonFilterTransfer $returnReasonFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\ReturnReasonCollectionTransfer
-     */
     public function getReturnReasons(ReturnReasonFilterTransfer $returnReasonFilterTransfer): ReturnReasonCollectionTransfer
     {
         return $this->salesReturnFacade->getReturnReasons($returnReasonFilterTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ReturnCreateRequestTransfer $returnCreateRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ReturnResponseTransfer
-     */
     public function createReturn(ReturnCreateRequestTransfer $returnCreateRequestTransfer): ReturnResponseTransfer
     {
         return $this->salesReturnFacade->createReturn($returnCreateRequestTransfer);

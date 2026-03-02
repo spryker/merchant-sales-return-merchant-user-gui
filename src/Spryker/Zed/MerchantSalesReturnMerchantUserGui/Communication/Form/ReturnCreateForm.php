@@ -28,11 +28,6 @@ class ReturnCreateForm extends AbstractType
      */
     protected const OPTION_RETURN_REASONS = 'option_return_reasons';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired([
