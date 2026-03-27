@@ -50,7 +50,13 @@
     <td rowspan="{{ numberOfItemAdditions }}" class="state-history">
         {% if not isBundleProduct %}
 
-            <a href="{{ url('/state-machine/graph/draw', {'process': returnItem.orderItem.process, 'highlight-state': (merchantOrderItem.stateHistory | first).stateName, 'state-machine': 'Merchant'}) }}" target="_blank">{{ (merchantOrderItem.stateHistory | first).stateName }}</a> ({{ returnItem.orderItem.process }})
+            {% set visualizerLink = include('@StateMachineVisualizer/Partial/link.twig', {stateMachineType: 'state-machine', processName: returnItem.orderItem.process, stateMachine: 'Merchant', highlightState: (merchantOrderItem.stateHistory | first).stateName}, false, true) %}
+            {% if visualizerLink %}
+                {{ visualizerLink | raw }}
+            {% else %}
+                <a href="{{ url('/state-machine/graph/draw', {'process': returnItem.orderItem.process, 'highlight-state': (merchantOrderItem.stateHistory | first).stateName, 'state-machine': 'Merchant'}) }}" target="_blank">{{ (merchantOrderItem.stateHistory | first).stateName }}</a>
+            {% endif %}
+            ({{ returnItem.orderItem.process }})
             {% if merchantOrderItem.stateHistory is not empty %}
 
                 <br>
